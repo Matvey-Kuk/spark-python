@@ -1,7 +1,7 @@
 from cspark.Updater import Updater
 from cspark.EventTypeRouter import EventTypeRouter
 from cspark.UpdateHandler import UpdateHandler
-from cspark.PeeweeContextStorage import PeeweeContextStorage
+from cspark.PeeweeContextEngine import PeeweeContextEngine
 from cspark.MessageResponse import MessageResponse
 
 
@@ -11,7 +11,7 @@ updater = Updater(
 )
 
 
-class RoomMentionsCounterUpdateHandler(UpdateHandler, PeeweeContextStorage):
+class RoomMentionsCounterUpdateHandler(UpdateHandler, PeeweeContextEngine):
     """
     This class inherited from UpdateHandler and PeeweeContextStorage.
 

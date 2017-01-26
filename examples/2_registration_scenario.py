@@ -3,9 +3,8 @@
 #########################################################
 
 from cspark.Updater import Updater
-from cspark.PeeweeContextRouter import PeeweeContextRouter
+from cspark.PeeweeContextEngine import PeeweeContextEngine
 from cspark.MessageResponse import MessageResponse
-from cspark.PeeweeContextStorage import PeeweeContextStorage
 from cspark.UpdateHandler import UpdateHandler
 
 
@@ -14,25 +13,25 @@ updater = Updater(
 )
 
 
-class RegistrationUpdateHandler(UpdateHandler, PeeweeContextStorage):
+class RegistrationUpdateHandler(UpdateHandler, PeeweeContextEngine):
 
     STEPS_REQUIRED = 2
     REG_CONTEXT_KEY = 'registration_scenario_step_number'
 
     def handle_update(self):
 
-        if self.context[RegistrationUpdateHandler.REG_CONTEXT_KEY] == 2:
+        if self.context.user[RegistrationUpdateHandler.REG_CONTEXT_KEY] == 2:
             self.context.user["last_name"] = self.update.get_plain_text()
             self.send_response(MessageResponse("Good. Now let me greet you!"))
 
-        if self.context[RegistrationUpdateHandler.REG_CONTEXT_KEY] == 1:
+        if self.context.user[RegistrationUpdateHandler.REG_CONTEXT_KEY] == 1:
             self.context.user["first_name"] = self.update.get_plain_text()
             self.send_response(MessageResponse("What's your last name?"))
 
-        elif self.context[RegistrationUpdateHandler.REG_CONTEXT_KEY] == 0:
+        elif self.context.user[RegistrationUpdateHandler.REG_CONTEXT_KEY] == 0:
             self.send_response(MessageResponse("Hi! What's your first name?"))
 
-        self.context[RegistrationUpdateHandler.REG_CONTEXT_KEY] += 1
+        self.context.user[RegistrationUpdateHandler.REG_CONTEXT_KEY] += 1
 
 
 class GreetingUpdateHandler(UpdateHandler):
@@ -42,7 +41,7 @@ class GreetingUpdateHandler(UpdateHandler):
         )
 
 
-class MyRouter(PeeweeContextRouter):
+class MyRouter(PeeweeContextEngine):
     """
     Inherited from PeeweeContextRouter so we can use "self.context" again.
     Here we use it to define handler class
