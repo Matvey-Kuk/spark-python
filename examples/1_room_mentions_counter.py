@@ -1,7 +1,11 @@
+##########################################
+# Check examples/0_simple_echo.py before #
+##########################################
+
 from cspark.Updater import Updater
 from cspark.EventTypeRouter import EventTypeRouter
 from cspark.UpdateHandler import UpdateHandler
-from cspark.PeeweeContextEngine import PeeweeContextEngine
+from cspark.SQLiteContextEngine import SQLiteContextEngine
 from cspark.MessageResponse import MessageResponse
 
 
@@ -10,7 +14,7 @@ updater = Updater(
 )
 
 
-class RoomMentionsCounterUpdateHandler(UpdateHandler, PeeweeContextEngine):
+class RoomMentionsCounterUpdateHandler(UpdateHandler, SQLiteContextEngine):
     """
     Handler should process messages from user and response with answers.
 

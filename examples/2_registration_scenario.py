@@ -1,9 +1,9 @@
-#########################################################
-# Check examples/1_room_mentions_counter.py for basics! #
-#########################################################
+####################################################
+# Check examples/1_room_mentions_counter.py before #
+####################################################
 
 from cspark.Updater import Updater
-from cspark.PeeweeContextEngine import PeeweeContextEngine
+from cspark.SQLiteContextEngine import SQLiteContextEngine
 from cspark.MessageResponse import MessageResponse
 from cspark.UpdateHandler import UpdateHandler
 
@@ -13,7 +13,7 @@ updater = Updater(
 )
 
 
-class RegistrationUpdateHandler(UpdateHandler, PeeweeContextEngine):
+class RegistrationUpdateHandler(UpdateHandler, SQLiteContextEngine):
 
     STEPS_REQUIRED = 2
     REG_CONTEXT_KEY = 'registration_scenario_step_number'
@@ -41,7 +41,7 @@ class GreetingUpdateHandler(UpdateHandler):
         )
 
 
-class MyRouter(PeeweeContextEngine):
+class MyRouter(SQLiteContextEngine):
     """
     Inherited from PeeweeContextRouter so we can use "self.context" again.
     Here we use it to define handler class
