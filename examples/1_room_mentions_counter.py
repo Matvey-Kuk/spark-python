@@ -5,7 +5,6 @@ from cspark.PeeweeContextEngine import PeeweeContextEngine
 from cspark.MessageResponse import MessageResponse
 
 
-# Updater handles main event loop. At first, need to setup Updater with your access_token
 updater = Updater(
     access_token="",
 )
@@ -13,12 +12,15 @@ updater = Updater(
 
 class RoomMentionsCounterUpdateHandler(UpdateHandler, PeeweeContextEngine):
     """
+    Handler should process messages from user and response with answers.
+
     This class inherited from UpdateHandler and PeeweeContextStorage.
 
-    UpdateHandler is a simple handler. You need it to use "handle_update" method.
+    UpdateHandler gives you "self.send_response" to send answers.
 
-    PeeweeContextStorage gives you "self.context" which is dictionare.
-    You can save your data there for future. It's stateful container.
+    PeeweeContextStorage gives you "self.context" which is a dictionary.
+    You can save your data there for future. It's stateful container,
+    which stores your data in Peewee ORM (SQLite by default).
     """
 
     def handle_update(self):
@@ -34,6 +36,8 @@ class RoomMentionsCounterUpdateHandler(UpdateHandler, PeeweeContextEngine):
 
 class Router(EventTypeRouter):
     """
+    Router should decide which message should be processed by which handler.
+
     This router is inherited from EventTypeRouter which divide updates by their type.
     For example this router set RoomMentionsCounterUpdateHandler for updates which are messages.
     """
