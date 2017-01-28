@@ -4,7 +4,7 @@ from setuptools import setup
 
 if __name__ == "__main__":
 
-    with open('README.md', 'r') as f:
+    with open('README.rst', 'r') as f:
         long_description = f.read()
 
     setup(
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         name='cspark-python',
         description='Python library for Cisco Spark',
         long_description=long_description,
-        version='0.0.7',
+        version='0.0.8',
         author='Matvei Kukui',
         author_email='motakuk@gmail.com',
         url='https://github.com/Matvey-Kuk/cspark-python',
