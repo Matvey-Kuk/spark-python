@@ -1,6 +1,9 @@
 # Cspark-python is a [cisco spark](https://www.ciscospark.com/) library for bots
 
 [![Build Status](https://travis-ci.org/Matvey-Kuk/cspark-python.svg?branch=master)](https://travis-ci.org/Matvey-Kuk/cspark-python)
+![](https://img.shields.io/pypi/dm/cspark-python.svg)
+![](https://img.shields.io/pypi/v/cspark-python.svg)
+![](https://img.shields.io/pypi/pyversions/cspark-python.svg)
 
 ### Why?
 
