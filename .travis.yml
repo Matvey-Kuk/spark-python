@@ -1,4 +1,5 @@
 language: python
+
 python:
   - "2.6"
   - "2.7"
@@ -12,10 +13,7 @@ python:
   - "3.7-dev"
   - "nightly"
 
-install: "pip install -r requirements.txt"
-
 deploy:
-    # test pypi
   - provider: pypi
     distributions: sdist
     user: "Matvey-Kuk"
@@ -23,3 +21,4 @@ deploy:
       secure: "ma92fQEKgt4Ui8Fp6SHTQVapvV2qOChRJ39lNrw+bWaVoAkx+76o5wgwVmcosGoIsph2ualfJ1B5VVjxC7cJ/ZYXAkOdIuQgO6JT9ds3R9kljDvT47gHww5Ah/SmuvIEMbRkba/tILwLrPh9HSMlAm+QcNp8Hl8GoDO6aidvwHNav50YFd3wSw22W6FPuXs5OZFjdu9xxtwzqI1RjjdrLVdEGvgc5DBigxfCVSZ+nKsggXgQp6P9KA8TZq8EN8eorsYCSXRmkktBwI/ZC4ckmRYzVHWD6gL4WffQ1rJOI5pP1MweHxsktUCgnXU6Hiz8/oyvvBwlvd6lKq+jMn0SCJN1y/c6aNpyyXnHicODSRMjLVBepycWYLTqOGZyHCn2z+uaBWp8XiiENr72vQKo8F00i1B5qytEYoKTztedKuI5WDFNaw4lBvbdJhhPzQQdLpkkeGtgdNvhFFrPbGQbFPD5dOEyEZdMXydAXw5CmTPShT+V9IZnxcwtuw+UM1rXoXH9XHPxxjXJe5RKn/G/04COyB6jGfMd1uqjUWQZmHcyeAYDOLejGom8RdE56n/f1rl9w1llgFw+sqDQADt5frS/55tb/jGsMdAAds2ivhSG8x64vn8Bct6lZlcHr/oPNS/OTIwyGD7bh7W1CWRCZLlq7/HWHJ6pYZJYb3LA5VI="
     on:
       branch: master
+      condition: $TRAVIS_PYTHON_VERSION = "3.5"
