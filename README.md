@@ -19,7 +19,8 @@ structure for complex projects.
 pip install cspark-python
 ```
 
-2. Then go to developer website, [create new bot](https://developer.ciscospark.com/apps.html) and achieve **Access Token**.
+2. Then go to developer website, [create new bot](https://developer.ciscospark.com/apps.html) and achieve **Access Token**. 
+Be careful and don't copy your own **Access Token** it will cause funny situation.  
 
 > If you stacked with icon uploading mechanism (as I always do), you can use random photo of a cat: https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg 
 

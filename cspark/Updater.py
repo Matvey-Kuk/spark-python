@@ -38,7 +38,6 @@ class Updater(object):
 
         while True:
             try:
-
                 time.sleep(0.5)
 
                 # Getting list of rooms
@@ -94,7 +93,7 @@ class Updater(object):
                                         'message_id': message['id'],
                                     }
                                 )
-                                update = MessageUpdate(message, room)
+                                update = MessageUpdate(message, room, self.__headers)
                                 self.__handle_update(update)
             except Exception as e:
                 print(e)
