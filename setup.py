@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
     name='cspark-python',
-    version='0.0.1',
+    version='0.0.2',
     description='Python library for Cisco Spark',
     author='Matvei Kukui',
     author_email='motakuk@gmail.com',

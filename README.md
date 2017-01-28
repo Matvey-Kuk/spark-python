@@ -1,6 +1,6 @@
 # Cspark-python is a [cisco spark](https://www.ciscospark.com/) library for bots
 
-Cspark-python is a simple and user-oriented library for Cisco Spark bots.
+[![Build Status](https://travis-ci.org/Matvey-Kuk/cspark-python.svg?branch=master)](https://travis-ci.org/Matvey-Kuk/cspark-python)
 
 ### Why?
 
