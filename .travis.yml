@@ -1,5 +1,7 @@
 language: python
-
+addons:
+  apt_packages:
+    - pandoc
 python:
   - "2.7"
   - "3.5"
@@ -8,12 +10,12 @@ python:
   - "3.6-dev"
   - "3.7-dev"
   - "nightly"
-
 script:
   - pip install -e .
-
+  - pandoc --from=markdown --to=rst --output=README.rst README.md
 deploy:
   - provider: pypi
+    skip_cleanup: true
     distributions: sdist
     user: "Matvey-Kuk"
     password:
