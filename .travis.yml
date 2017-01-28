@@ -11,8 +11,8 @@ python:
   - "3.7-dev"
   - "nightly"
 script:
-  - pip install -e .
   - pandoc --from=markdown --to=rst --output=README.rst README.md
+  - pip install -e .
 deploy:
   - provider: pypi
     skip_cleanup: true
