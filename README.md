@@ -8,7 +8,7 @@
 
 1. Spark API provides only one mechanism to notify bot about updates: Webhooks.
 "Webhooks require that the Cisco Spark Cloud be able to reach your backend over HTTP" 
-[(link)](https://developer.ciscospark.com/webhooks-explained.html#auth)
+[(link)](https://developer.ciscospark.com/webhooks-explained.html)
 It's not comfortable to develop and test bots on public server so Cspark-python
 emulates update mechanism using REST API.
 2. Class-based routers and request handlers allow you to use Django-style project 
