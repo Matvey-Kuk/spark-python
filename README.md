@@ -1,7 +1,4 @@
-# Cspark-python [![Build](https://travis-ci.org/Matvey-Kuk/cspark-python.svg?branch=master)](https://travis-ci.org/Matvey-Kuk/cspark-python) [![Downloads](https://img.shields.io/pypi/dm/cspark-python.svg)](https://pypi.python.org/pypi/cspark-python) [![Version](https://img.shields.io/pypi/v/cspark-python.svg)](https://pypi.python.org/pypi/cspark-python) [![Updates](https://pyup.io/repos/github/matvey-kuk/cspark-python/shield.svg)](https://pyup.io/repos/github/matvey-kuk/cspark-python/) [![Python 3](https://pyup.io/repos/github/matvey-kuk/cspark-python/python-3-shield.svg)](https://pyup.io/repos/github/matvey-kuk/cspark-python/)
-
-
-
+# Cspark-python [![Build](https://travis-ci.org/Matvey-Kuk/cspark-python.svg?branch=master)](https://travis-ci.org/Matvey-Kuk/cspark-python) [![Downloads](https://img.shields.io/pypi/dm/cspark-python.svg)](https://pypi.python.org/pypi/cspark-python) [![Version](https://img.shields.io/pypi/v/cspark-python.svg)](https://pypi.python.org/pypi/cspark-python) [![Updates](https://pyup.io/repos/github/matvey-kuk/cspark-python/shield.svg)](https://pyup.io/repos/github/matvey-kuk/cspark-python/) [![Python 3](https://pyup.io/repos/github/matvey-kuk/cspark-python/python-3-shield.svg)](https://pyup.io/repos/github/matvey-kuk/cspark-python/) [![codecov](https://codecov.io/gh/Matvey-Kuk/cspark-python/branch/master/graph/badge.svg)](https://codecov.io/gh/Matvey-Kuk/cspark-python)
 
 Cspark-python is a [cisco spark](https://www.ciscospark.com/) library for simple or complex bots.
 
