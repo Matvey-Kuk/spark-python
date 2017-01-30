@@ -1,4 +1,4 @@
-from cspark.Response import Response
+from .Response import Response
 
 
 class MessageResponse(Response):

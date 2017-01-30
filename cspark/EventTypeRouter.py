@@ -1,4 +1,4 @@
-from cspark.Router import Router
+from .Router import Router
 
 
 class EventTypeRouter(Router):

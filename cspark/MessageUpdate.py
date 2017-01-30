@@ -10,6 +10,9 @@ class MessageUpdate(Update):
         self.__room = room
         self.__headers = headers
 
+    def get_raw_message(self):
+        return self.__message
+
     def get_plain_text(self):
         if 'text' in self.__message:
             return self.__message['text']
@@ -18,12 +21,15 @@ class MessageUpdate(Update):
         return self.__room
 
     def get_files_list(self):
-        return self.__message['files']
+        if 'files' in self.__message:
+            return self.__message['files']
+        else:
+            return []
 
-    def download_file(self, number):
+    def download_file(self, number, file_distanation):
         file = self.__message['files'][number]
         response = requests.get(file, headers=self.__headers)
 
         if response.status_code == 200:
-            with open('buffer.file', 'wb') as buffer:
+            with open(file_distanation, 'wb') as buffer:
                 buffer.write(response.content)

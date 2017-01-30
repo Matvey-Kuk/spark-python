@@ -1,5 +1,3 @@
-
-
 class UpdateHandler:
     def __init__(self):
         self.update = None

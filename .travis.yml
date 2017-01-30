@@ -1,7 +1,9 @@
 language: python
+
 addons:
   apt_packages:
     - pandoc
+
 python:
   - "2.7"
   - "3.5"
@@ -10,9 +12,15 @@ python:
   - "3.6-dev"
   - "3.7-dev"
   - "nightly"
+
+install:
+  - pip install codecov
+
 script:
   - pandoc --from=markdown --to=rst --output=README.rst README.md
   - pip install -e .
+  - coverage run tests.py
+
 deploy:
   - provider: pypi
     skip_cleanup: true
@@ -23,3 +31,6 @@ deploy:
     on:
       branch: master
       condition: $TRAVIS_PYTHON_VERSION = "3.5"
+
+after_success:
+  - codecov

@@ -1,5 +1,5 @@
-from collections import OrderedDict
 import datetime
+from collections import OrderedDict
 from peewee import CharField, Model, SqliteDatabase
 
 
