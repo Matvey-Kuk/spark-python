@@ -25,7 +25,7 @@ if __name__ == "__main__":
         name='cspark-python',
         description='Python library for Cisco Spark',
         long_description=long_description,
-        version='0.0.10',
+        version='0.0.11',
         author='Matvei Kukui',
         author_email='motakuk@gmail.com',
         url='https://github.com/Matvey-Kuk/cspark-python',

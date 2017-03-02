@@ -10,18 +10,21 @@ class Updater(object):
     MODE_INSANE_REQUESTS, MODE_WEBHOOK = range(2)
 
     API_URL = "https://api.ciscospark.com/v1/"
+    HEADERS = None
 
     def __init__(
             self,
             access_token,
             mode=MODE_INSANE_REQUESTS,
-            context_engine_class=None,
+            context_engine=None,
     ):
         self.__access_token = access_token
         self.__mode = mode
-        self.__context_engine = context_engine_class()
+        self.__context_engine = context_engine
 
         self.__headers = {'Authorization': 'Bearer ' + self.__access_token}
+        Updater.HEADERS = self.__headers
+
         self.__self_data = None
         self.__id = None
         self.__rooms = None
@@ -52,7 +55,8 @@ class Updater(object):
                         'type': 'last_room_activity_record',
                         'room_id': room['id'],
                         'last_activity': room['lastActivity']
-                    }
+                    },
+                    _value="Ok"
                 )
 
                 mention_me = ''
@@ -61,7 +65,7 @@ class Updater(object):
 
                 # Get last messages
                 messages_response = requests.get(
-                    Updater.API_URL + '/messages?max=100&roomId=' + room['id'] + mention_me,
+                    Updater.API_URL + '/messages?max=10&roomId=' + room['id'] + mention_me,
                     headers=self.__headers
                 )
                 messages = messages_response.json()['items']
@@ -81,9 +85,10 @@ class Updater(object):
                             _key={
                                 'type': 'message_record',
                                 'message_id': message['id'],
-                            }
+                            },
+                            _value="Ok"
                         )
-                        update = MessageUpdate(message, room, self.__headers)
+                        update = MessageUpdate(message, self.__headers)
                         self.__handle_update(update)
 
     def idle(self, handle_exceptions=False):
@@ -103,8 +108,8 @@ class Updater(object):
             else:
                 self.__check_rooms_for_new_messages()
 
-    def add_router(self, router):
-        self.__routers.append(router)
+    def add_router(self, router_class):
+        self.__routers.append(router_class(self.__context_engine))
 
     def __get_context(self, update):
         return None

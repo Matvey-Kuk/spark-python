@@ -1,7 +1,15 @@
-class ContextUpdateHandler:
-    def __init__(self, context_engine=None):
-        self.__context_engine = None
-        self.update = None
+from .UpdateHandler import UpdateHandler
+from .ContextBuilder import ContextBuilder
 
-    def send_response(self, response):
-        pass
+
+class ContextUpdateHandler(ContextBuilder, UpdateHandler):
+
+    def __init__(self, context_engine):
+        ContextBuilder.__init__(self, context_engine)
+        UpdateHandler.__init__(self)
+
+    def before(self, update):
+        self.build_context(update)
+
+    def after(self, update):
+        self.save_context(update)

@@ -1,3 +1,4 @@
+import json
 import datetime
 from collections import OrderedDict
 from peewee import CharField, Model, SqliteDatabase
@@ -23,13 +24,19 @@ class SQLiteContextEngine:
         if not ContextInstance.table_exists():
             db.create_tables([ContextInstance])
 
-    def put_data(self, _key=None, _value=None):
+    def put_data(self, _key=None, _value=""):
         sorted_key = OrderedDict(sorted(_key.items(), key=lambda t: t[1]))
-        ContextInstance(key=sorted_key, value=_value).save()
+        ContextInstance.delete().where(ContextInstance.key==sorted_key).execute()
+        ContextInstance(key=sorted_key, value=json.dumps(_value)).save()
 
     def get_data(self, _key=None):
         sorted_key = OrderedDict(sorted(_key.items(), key=lambda t: t[1]))
         try:
-            return ContextInstance.get(key=sorted_key)
+            values = ContextInstance.get(key=sorted_key).value
+            deserialized_values = None
+            if values is not None:
+                deserialized_values = json.loads(values)
+
+            return deserialized_values
         except ContextInstance.DoesNotExist:
             return None

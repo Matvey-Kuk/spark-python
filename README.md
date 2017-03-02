@@ -1,7 +1,6 @@
-# Cspark-python [![Build](https://travis-ci.org/Matvey-Kuk/cspark-python.svg?branch=master)](https://travis-ci.org/Matvey-Kuk/cspark-python) [![Downloads](https://img.shields.io/pypi/dm/cspark-python.svg)](https://pypi.python.org/pypi/cspark-python) [![Version](https://img.shields.io/pypi/v/cspark-python.svg)](https://pypi.python.org/pypi/cspark-python) [![Updates](https://pyup.io/repos/github/matvey-kuk/cspark-python/shield.svg)](https://pyup.io/repos/github/matvey-kuk/cspark-python/) [![Python 3](https://pyup.io/repos/github/matvey-kuk/cspark-python/python-3-shield.svg)](https://pyup.io/repos/github/matvey-kuk/cspark-python/) [![codecov](https://codecov.io/gh/Matvey-Kuk/cspark-python/branch/master/graph/badge.svg)](https://codecov.io/gh/Matvey-Kuk/cspark-python)
+# Cspark-python [![Build](https://travis-ci.org/Matvey-Kuk/cspark-python.svg?branch=master)](https://travis-ci.org/Matvey-Kuk/cspark-python) [![Version](https://img.shields.io/pypi/v/cspark-python.svg)](https://pypi.python.org/pypi/cspark-python) [![Updates](https://pyup.io/repos/github/matvey-kuk/cspark-python/shield.svg)](https://pyup.io/repos/github/matvey-kuk/cspark-python/) [![Python 3](https://pyup.io/repos/github/matvey-kuk/cspark-python/python-3-shield.svg)](https://pyup.io/repos/github/matvey-kuk/cspark-python/) [![codecov](https://codecov.io/gh/Matvey-Kuk/cspark-python/branch/master/graph/badge.svg)](https://codecov.io/gh/Matvey-Kuk/cspark-python)
 
-Cspark-python is a [cisco spark](https://www.ciscospark.com/) library for simple or complex bots.
-
+Cspark-python is a library for [Cisco Spark](https://www.ciscospark.com/) bots.
 
 ### Why Cspark-python?
 
@@ -28,6 +27,14 @@ Be careful and don't copy your own **Access Token** it will cause funny situatio
 
 3. Use examples to start your first bot. Don't forget to change **Access Token**.
 
-> Currently only 0_simple_echo.py example works, others are concepts.
+Hello, google: **Cisco Spark Python SDK**, **Cisco Spark Python Framework**, **Cisco Spark Bot**, **Bot For Cisco Spark Example**
 
-Keywords: Cisco Spark team use term "SDK" for libraries which use their API... Ok. That's **Cisco Spark Python SDK**.   
+### Status:
+
+- [x] Build prototype
+- [ ] Stabilize interfaces
+- [ ] UT
+- [ ] Document
+- [ ] Web Hooks
+- [ ] Deploy instructions & Dockerfile
+- [ ] Starter Project Repo
